@@ -1,0 +1,65 @@
+{% load staticfiles %}
+<html>
+    <head>
+        <title>Online Shop</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <link rel="stylesheet" href="{% static "/css/style.css" %}">
+
+
+        <style>
+
+            .title{
+                color: darkblue;
+                text-align: center;
+                color: black;
+                font-weight: 100;
+                line-height: 50px;
+            }
+            html,body{
+                height: 100%;
+                max-height: 100%;
+                font-family: 'Roboto', sans-serif;
+
+            }
+            .top-container{
+                padding-top: 10%;
+            }
+            .general-container{
+                background-color: gainsboro;
+                height: 100%;
+            }
+
+
+
+
+        </style>
+    </head>
+    <body>
+       <div class = "general-container">
+       <div class="container top-container">
+           <div class="row">
+               <div class="col-1g-8 col-1g-offset-3">
+                   <h1 class="title">Our shop will open</h1>
+                   <h1 class="title">Drop email in form below</h1>
+                   <div>
+                       <form action="" method="post" class = "form-inline text-center">{% csrf_token %}
+                       <div class = "form-group">
+                           <label>Your email: </label>
+                           {{ form.email }}
+                       </div>
+                        <div class="form-group">
+                            <label>Your name: </label>
+                            {{ form.name }}
+                        </div>
+                           <button type="submit" class="btn btn-primary">Send</button>
+
+                       </form>
+                   </div>
+               </div>
+           </div>
+       </div>
+       </div>
+    </body>
+</html>
